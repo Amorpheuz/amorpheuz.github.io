@@ -5,13 +5,13 @@ export default {
   ...baseTheme,
   colors: {
     ...baseTheme.colors,
-    text: "#222222",
-    muted: "#666666",
-    primary: "#FF4081",
-    secondary: "#03A9F4",
-    success: "#FFEB3B",
-    background: "#ffffff",
-    surface: "#f3f3f3"
+    text: "#FAC29A",
+    muted: "#6C6F93",
+    primary: "#F43E5C",
+    secondary: "#09F7A0",
+    success: "#25B2BC",
+    background: "#1C1E26",
+    surface: "#2E303E"
   },
   styles: {
     ...baseTheme.styles,
