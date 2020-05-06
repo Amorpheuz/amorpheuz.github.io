@@ -5,12 +5,12 @@ export default {
   ...baseTheme,
   colors: {
     ...baseTheme.colors,
-    text: "#FAC29A",
+    text: "#eaeaea",
     muted: "#6C6F93",
-    primary: "#F43E5C",
-    secondary: "#09F7A0",
-    success: "#25B2BC",
-    background: "#1C1E26",
+    primary: "#ff2e63",
+    secondary: "#08d9d6",
+    success: "#27FB6B",
+    background: "#252a34",
     surface: "#2E303E"
   },
   styles: {

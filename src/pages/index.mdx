@@ -2,9 +2,23 @@
 navigationLabel: Home
 ---
 
-# Main
+# Home
 
-## Greetings
-Hi folks, I am Yash!
+This is `src/pages/index.mdx`
 
-## ShortIntroduction
+Code snippets can themed, see `gatsby-plugin-theme-ui/index.js`
+
+```javascript
+<SourceList>
+  {source => (
+    <ul>
+      {source.map((edge, index) => {
+        const {
+          frontmatter: { title }
+        } = edge.node;
+        return <li key={index}>{title}</li>;
+      })}
+    </ul>
+  )}
+</SourceList>
+```
