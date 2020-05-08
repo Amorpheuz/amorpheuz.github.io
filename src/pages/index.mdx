@@ -2,23 +2,31 @@
 navigationLabel: Home
 ---
 
-# Home
+<Flex><Spinner height="30" /><h4>Requesting Introduction...</h4></Flex>
 
-This is `src/pages/index.mdx`
+# helloWorld
+<Message variant="success" mb={2}>Hey Everyone, my name is Yash Dave! I'm a Passionate and Self-Motivated Full-Stack Developer that loves working with Open-Source Technologies and Contributing to them!</Message>
 
-Code snippets can themed, see `gatsby-plugin-theme-ui/index.js`
+<Message variant="success" mb={2}>Dabbling into experimental cutting edge new technologies is my favorite pastime. I love motivating others to get into Open-Source and writing occasional blogs!</Message>
+<br />
+<Flex><Spinner height="30" /><h4>You seem fun to talk with, Hit me up! Fetching Contact information...</h4></Flex>
 
-```javascript
-<SourceList>
-  {source => (
-    <ul>
-      {source.map((edge, index) => {
-        const {
-          frontmatter: { title }
-        } = edge.node;
-        return <li key={index}>{title}</li>;
-      })}
-    </ul>
-  )}
-</SourceList>
-```
+## getInTouch
+<Grid gap={2} columns={[2, '1fr 1fr']}>
+  <Box>
+    <Heading variant='styles.h3' sx={{mb: 0}}>Email</Heading>
+    <Link href='mailto:mail2ypd@gmail.com' variant='styles.a'>mail2ypd@gmail.com</Link>
+    <Divider />
+    <Heading variant='styles.h3' sx={{mb: 0,}}>Twitter</Heading>
+    <Link href='https://twitter.com/Amorpheuz/' variant='styles.a'>https://twitter.com/Amorpheuz/</Link>
+    <Divider />
+  </Box>
+  <Box>
+    <Heading variant='styles.h3' sx={{mb: 0}}>GitHub</Heading>
+    <Link href='https://github.com/Amorpheuz/' variant='styles.a'>https://github.com/Amorpheuz/</Link>
+    <Divider />
+    <Heading variant='styles.h3' sx={{mb: 0}}>LinkedIn</Heading>
+    <Link href='https://www.linkedin.com/in/Amorpheuz/' variant='styles.a'>https://linkedin.com/in/Amorpheuz/</Link>
+    <Divider />
+  </Box>
+</Grid>
