@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    name: "gatsby-starter-terminal",
-    description: "A Gatsby starter for @pauliescanlon/gatsby-theme-terminal",
-    keywords: ["tech", "blog", "boop"],
-    siteUrl: "https://gatsby-starter-terminal.netlify.com",
+    name: "Amorpheuz's Portfolio",
+    description: "A blog and portfolio site for Yash Dave",
+    keywords: ["tech", "blog"],
+    siteUrl: "https://amorpheuz.github.io",
     siteImage: "terminal-open-graph-image.jpg",
     profileImage: ``,
     lang: `en`,
