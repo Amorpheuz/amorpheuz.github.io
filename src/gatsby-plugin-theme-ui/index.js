@@ -6,7 +6,7 @@ export default {
   colors: {
     ...baseTheme.colors,
     text: "#eaeaea",
-    muted: "#6C6F93",
+    muted: "#B5B7CA",
     primary: "#ff2e63",
     secondary: "#08d9d6",
     success: "#27FB6B",
