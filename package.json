@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-terminal",
+  "name": "amorpheuz-portfolio",
   "private": true,
-  "description": "A Gatsby starter for gatsby-theme-terminal",
+  "description": "A blog and portfolio site for Yash Dave",
   "version": "0.1.0",
-  "author": "Paul Scanlon <pauliescanlon@gmail.com>",
+  "author": "Yash Dave <mail2ypd@gmail.com>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",
@@ -34,9 +34,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PaulieScanlon/gatsby-starter-terminal"
+    "url": "https://github.com/Amorpheuz/amorpheuz.github.io"
   },
   "bugs": {
-    "url": "https://github.com/PaulieScanlon/gatsby-starter-terminal/issues"
+    "url": "https://github.com/Amorpheuz/amorpheuz.github.io/issues"
   }
 }
