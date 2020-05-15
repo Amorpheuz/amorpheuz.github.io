@@ -8,10 +8,10 @@ This is `src/pages/posts.mdx`
 
 Here we use the `<SourceList />` to list files found in `posts`
 
-<SourceList>
-  {source => (
+<SourceList filter='posts'>
+  {posts => (
     <ul>
-      {source.map((edge, index) => {
+      {posts.map((edge, index) => {
         const {
           frontmatter: { title },
           fields: { slug }
