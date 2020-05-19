@@ -1,0 +1,69 @@
+---
+title: Setting up Dev.to on Manjaro Linux for Hacktoberfest
+tags: ['hacktoberfest', 'linux', 'manjaro', 'tutorial']
+date: 2019-09-30
+---
+## EDIT
+The guide is no longer up to date as there have been significant changes to the platform. Do refer to latest guidelines on https://docs.dev.to/ . Feel free to dm me if you are facing any trouble in the setup procedure on Manjaro!
+
+---
+## The guide
+As Hacktoberfest approached and my WSL setup of dev.to's repo not behaving properly when it comes to Acceptance testing; I finally steeled myself up for switching to a Linux distro for the same. Manjaro had always been on the back of my find from reading a lot of praise about it online and hearing about it from peers. I wanted something beginner-friendly, with a great team & community behind it along with the ability to game smoothly during the rare occasions I was free. Manjaro seemed to check all these boxes and thus I was all aboard the Manjaro train.
+
+On a different note, this post is also going to talk about my experience too along with the steps. I also won't go fully into finer details of every step as that will make this guide more into a booklet, feel free to ask below if you are stuck somewhere!
+
+### Installing Manjaro
+I am seriously amazed by how easy it was to install Manjaro compared to my previous experience with Fedora. I feel it was the experience and confidence I gained messing about in fedora and WSL along with the very detailed guide Manjaro provides.
+
+I am not going to go into the install that much, and you should refer to the [Installation guide](https://manjaro.org/support/userguide/) and find the various flavors of the same at [https://manjaro.org/download/](https://manjaro.org/download/).
+
+There are a ton of options depending on what kind of environment you want, each flavor curating to a particular cause. I went with the KDE Plasma Version.
+
+### Personal Prerequisites
+Once my Manjaro was smoothly running, I began with downloading all my development necessities. The list turned out to be:
+- VS Code
+- GitKraken
+- Google Chrome
+- Spotify
+
+
+[Snapcraft](https://snapcraft.io/) is a great app store for all your Linux needs and has easy to install packages of many major app publishers. Manjaro comes with a great GUI app that manages not only Snap packages but also [Flatpak](https://flatpak.org/) and [AUR](https://aur.archlinux.org/) packages called [Bauh](https://github.com/vinifmor/bauh). Search your applications in the same and you will find it easily. 
+
+I grabbed the Snaps for Spotify and GitKraken via Bauh but from past experience of VS Code's Snap misbehaving I decided to take a different route for it and Google Chrome.
+[VS Code](https://aur.archlinux.org/packages/visual-studio-code-bin/) and [Google Chrome](https://aur.archlinux.org/packages/google-chrome/) both have AUR packages that I grabbed off the website and installed. The steps are the same for both and are as follow:
+1. Use `git clone` along with the Git Clone URL on the package page to download the repo at the location of your choice.
+2. Take your terminal into the downloaded repo via `Cd`.
+3. Run `makepkg -si` where `s` will generate the source tarball for the repo and `i` will install it after a successful build. Be ready with your root password for the install!
+![Personal Reqs Done](https://media.giphy.com/media/l0He4nkyI5cMhXzvW/giphy.gif)
+
+### Dev.to's Prerequisites
+Next came setting up dev.to's repo for development. It can be an intimidating task at first but stick it out and you are in for a treat! Open the [Linux Installation guide](https://docs.dev.to/installation/linux/) from their docs and keep it handy. 
+- First comes the **Ruby** installation. Manjaro already comes with Ruby 2.6.4 but Dev's repo requires 2.6.3, so be sure to be careful throughout these steps as to not get caught up later on.
+  - Use [rbenv-installer](https://github.com/rbenv/rbenv-installer#rbenv-installer) for getting rbenv, follow the steps in `README.md`. The installer should install rbenv smoothly and then run rbenv-doctor automatically. It will ask you to 2 paths to your `PATH` variable.
+  - You have to add these manually to your `.bashrc` file (hidden by default) in your home directory. To keep it simple, I recommend initially to just use the inbuilt text-editor (Kate) for editing it. Open your File Manager, go to your home directory, enable viewing hidden files in Extras/Controls. Open `.bashrc` by double-clicking on it and scroll to the bottom.
+  - Add the line `export PATH="<paths>:$PATH"` to the bottom in order to make rbenv command functional. There will be 2 paths to add which will be mentioned by the install command one after other. Replace `<path>` with those two paths, separating both by `:`.
+  - Run `rbenv-doctor` again to check if everything is set up correctly. Type `rbenv -v`.
+  - Next, Restart your terminal and run, `rbenv install 2.6.3`.
+  - Add `eval "$(rbenv init -)"` in the next line after the PATH line in `.bashrc` to initialize rbenv by default when you open the terminal. 
+  - Run `ruby -v` after restarting your terminal to ensure both have been set up correctly. The Ruby version should point to `2.6.3xxxx`.
+- Next in line is **Yarn**. Open it's [Installation Page for Arch](https://yarnpkg.com/en/docs/install#arch-stable) and run the command as indicated. Once installed run `yarn -v` to confirm the installation. You might have to add it to the path in some cases, which you can do as indicated later on the installation page.
+  - Installing it via `npm` is not recommended.
+- Next comes **PostgreSQL**. Go to its download page for [Other Linux distros](https://www.postgresql.org/download/linux/) and download the interactive `EnterpriseDB` installer.
+  - Once downloaded, open the terminal in the same directory. Run `chmod +x postgresql-10.10-2-linux-x64.run`, replacing the `postgresql-10.10-2-linux-x64.run` with appropriate downloaded file name. This gives it executable permissions. 
+  - Next run `sudo ./postgresql-10.10-2-linux-x64.run` or whatever the package name might be to start the installer. Follow the instruction. *Be sure to remember the password set for postgres here*.
+  - If you need a GUI for PostgreSQL, you will need `pgAdmin4`. The one that comes by default with the PostgreSQL installer doesn't work correctly on my PC, So I grabbed it via `Pacman`. Run `sudo Pacman -S pgadmin4` to install it.
+
+![Almost done?!](https://media.giphy.com/media/7JTpNYu7oYGX98KJkL/giphy.gif)
+
+### The Dev.to Repo
+- Once done with PostgreSQL, it's finally time to move on to getting the actual repo on your system. Follow the [Steps](https://docs.dev.to/installation/linux/#installing-dev) on the Linux Setup guide to Fork and Clone `dev.to` repo. Follow it thoroughly till you reach **Step 5**.
+- Before Step 5, go to [PostgreSQL Configuration](https://docs.dev.to/installation/postgresql/#configuration) section and do accordingly.
+- Next, run `bin/setup` as indicated in Step 5. Troubleshoot errors if any as shown in `Possible error messages` of both [Windows](https://docs.dev.to/installation/windows/) and [Linux](https://docs.dev.to/installation/linux/) docs.
+
+Finally, if all goes well, you will get an awesome `Dev` Banner in your console at the end of `bin/setup`.
+
+Run `bin/startup` to see the server bootup and have the massive ecosystem of dev running on your tiny computer.
+
+![Amazing](https://media.giphy.com/media/5p2wQFyu8GsFO/giphy.gif)
+
+Have an amazing Hacktoberfest, all the best with your PRs and Happy Coding!
