@@ -3,15 +3,16 @@ navigationLabel: Home
 ---
 
 import {format} from 'date-fns'
+import { mix } from '@theme-ui/color'
 
-<Flex><Spinner height="30" /><h4>Requesting Introduction...</h4></Flex>
+<Flex><Spinner height='30' /><h4>Requesting Introduction...</h4></Flex>
 
 # helloWorld
-<Message variant="success" mb={2}>Hey Everyone, my name is Yash Dave! I'm a Passionate and Self-Motivated Full-Stack Developer that loves working with Open-Source Technologies and Contributing to them!</Message>
+<Message variant='success' mb={2}>Hey Everyone, my name is Yash Dave! I'm a Passionate and Self-Motivated Full-Stack Developer that loves working with Open-Source Technologies and Contributing to them!</Message>
 
-<Message variant="success" mb={2}>Dabbling into experimental cutting edge new technologies is my favorite pastime. I love motivating others to get into Open-Source and writing occasional blogs!</Message>
+<Message variant='success' mb={2}>Dabbling into experimental cutting edge new technologies is my favorite pastime. I love motivating others to get into Open-Source and writing occasional blogs!</Message>
 <br />
-<Flex><Spinner height="30" /><h4>You seem fun to talk with, Hit me up! Fetching more information...</h4></Flex>
+<Flex><Spinner height='30' /><h4>You seem fun to talk with, Hit me up! Fetching more information...</h4></Flex>
 
 ## getInTouch
 <Grid gap={2} columns={[2, '1fr 1fr']}>
@@ -40,7 +41,7 @@ import {format} from 'date-fns'
   {projects => (
     <Flex
       sx={{
-        flexWrap: "wrap",
+        flexWrap: 'wrap',
         ml: theme => `-${theme.space[2]}px`,
         mr: theme => `-${theme.space[2]}px`,
       }}
@@ -53,7 +54,7 @@ import {format} from 'date-fns'
         return (
           <Box
             key={index}
-            sx={{ mb: 3, maxWidth: ["100%", "50%", "33.333%"], width: ["100%", "50%", "33.333%"] }}
+            sx={{ mb: 3, maxWidth: ['100%', '50%', '33.333%'], width: ['100%', '50%', '33.333%'] }}
           >
             <Link href={slug} sx={{textDecoration: 'none'}}>
               <Card
@@ -64,10 +65,24 @@ import {format} from 'date-fns'
                 }}
               > 
                 <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'd-MMM-u')}</Text>
-                <Heading variant="styles.h4" sx={{color: 'text'}}>{title}</Heading>
-                {tags.map((tag) => {
+                <Heading variant='styles.h4' sx={{color: 'text'}}>{title}</Heading>
+                {tags.map((tag, index) => {
+                  const { name, count, percent } = tag
                   return (
-                    <Badge variant='secondary' mb={2} mr={2}>
+                    <Badge
+                      key={index}
+                      variant='primary'
+                      sx={{
+                        mr: 2,
+                        mb: 2,
+                        color: mix('success', 'secondary', `${index / tags.length}`),
+                        borderColor: mix(
+                          'success',
+                          'secondary',
+                          `${index / tags.length}`
+                        ),
+                      }}
+                    >
                       {tag}
                     </Badge>
                   )
