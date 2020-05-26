@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDev, faGithubSquare, faTwitterSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 
+export const favTechs = ['React.js', 'Gatsby', 'JavaScript', '.NET Core', 'C#', 'Python', 'HTML5', 'CSS3', 'C', 'Java', 'SQL Server', 'MySQL',]
+
 <Flex><Spinner height='30' /><h4>Requesting Introduction...</h4></Flex>
 
 # helloWorld
@@ -30,7 +32,28 @@ import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
     <Link href='https://dev.to/amorpheuz' variant='styles.a' sx={{fontSize: '2rem'}}><FontAwesomeIcon icon={faDev} /></Link>
   </Box>
   <Box>
-    
+    <Heading variant='styles.h2' sx={{mb:0}}>favoriteTechnologies</Heading>
+    {favTechs.map((favTech, index) => {
+        return (
+          <Badge
+            key={index}
+            variant='primary'
+            sx={{
+              mr: 2,
+              mb: 2,
+              color: mix('secondary', 'success', `${index / favTechs.length}`),
+              borderColor: mix(
+                'secondary',
+                'success',
+                `${index / favTechs.length}`
+              ),
+            }}
+          >
+            {favTech}
+          </Badge>
+        )
+      })
+    }
   </Box>
 </Grid>
 <Heading variant='styles.h2'>fetchProjects</Heading>
@@ -100,5 +123,6 @@ import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 >
   <Button as='a' mr={2} href='/projects' variant='primary' >Show me more!! 👨‍💻👩‍💻</Button>
 </Flex>
+<Divider/>
 <Heading variant='styles.h2'>fetchRecentActivity</Heading>
 
