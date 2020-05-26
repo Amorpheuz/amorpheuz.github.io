@@ -46,7 +46,7 @@ import { mix } from '@theme-ui/color'
         mr: theme => `-${theme.space[2]}px`,
       }}
     >
-      {projects.map((edge, index) => {
+      {projects.splice(0, 3).map((edge, index) => {
         const {
           frontmatter: { title, date, tags },
           fields: { slug },
@@ -96,5 +96,12 @@ import { mix } from '@theme-ui/color'
     </Flex>
   )}
 </SourceList>
+<Flex 
+  sx={{
+    justifyContent: 'center',
+  }}
+>
+  <Button as='a' mr={2} href='/projects' variant='primary' >Show me more!! 👨‍💻👩‍💻</Button>
+</Flex>
 <Heading variant='styles.h2'>fetchRecentActivity</Heading>
 

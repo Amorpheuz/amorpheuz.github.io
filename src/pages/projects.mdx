@@ -1,0 +1,67 @@
+---
+navigationLabel: Projects
+---
+import {format} from 'date-fns'
+import { mix } from '@theme-ui/color'
+
+# Projects
+
+<SourceList filter='projects'>
+  {projects => (
+    <Flex
+      sx={{
+        flexWrap: 'wrap',
+        ml: theme => `-${theme.space[2]}px`,
+        mr: theme => `-${theme.space[2]}px`,
+      }}
+    >
+      {projects.map((edge, index) => {
+        const {
+          frontmatter: { title, date, tags },
+          fields: { slug },
+        } = edge.node
+        return (
+          <Box
+            key={index}
+            sx={{ mb: 3, maxWidth: ['100%', '50%', '33.333%'], width: ['100%', '50%', '33.333%'] }}
+          >
+            <Link href={slug} sx={{textDecoration: 'none'}}>
+              <Card
+                sx={{
+                  ml: 2, 
+                  mr: 2,
+                  p: 3,
+                }}
+              > 
+                <Text sx={{fontSize:0, color:'muted'}}>{format(new Date(date), 'd-MMM-u')}</Text>
+                <Heading variant='styles.h4' sx={{color: 'text'}}>{title}</Heading>
+                {tags.map((tag, index) => {
+                  const { name, count, percent } = tag
+                  return (
+                    <Badge
+                      key={index}
+                      variant='primary'
+                      sx={{
+                        mr: 2,
+                        mb: 2,
+                        color: mix('success', 'secondary', `${index / tags.length}`),
+                        borderColor: mix(
+                          'success',
+                          'secondary',
+                          `${index / tags.length}`
+                        ),
+                      }}
+                    >
+                      {tag}
+                    </Badge>
+                  )
+                })}
+                <Text sx={{textDecoration: 'underline'}}>View project</Text>
+              </Card>
+            </Link>
+          </Box>
+        )
+      })}
+    </Flex>
+  )}
+</SourceList>
