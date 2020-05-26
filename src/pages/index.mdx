@@ -2,38 +2,35 @@
 navigationLabel: Home
 ---
 
-import {format} from 'date-fns'
+import { format } from 'date-fns'
 import { mix } from '@theme-ui/color'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDev, faGithubSquare, faTwitterSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 
 <Flex><Spinner height='30' /><h4>Requesting Introduction...</h4></Flex>
 
 # helloWorld
-<Message variant='success' mb={2}>Hey Everyone, my name is Yash Dave! I'm a Passionate and Self-Motivated Full-Stack Developer that loves working with Open-Source Technologies and Contributing to them!</Message>
+<Message variant='success' mb={2}>
+  <Text variant='styles.h4'>Hey Everyone, my name is Yash Dave!</Text>
+  I develop awesome WebApps based on React.js, Gatsby and Pure HTML+CSS+JS. I am also an upcoming Data Scientist currently pursuing Python Profeciency.
+</Message>
 
 <Message variant='success' mb={2}>Dabbling into experimental cutting edge new technologies is my favorite pastime. I love motivating others to get into Open-Source and writing occasional blogs!</Message>
 <br />
 <Flex><Spinner height='30' /><h4>You seem fun to talk with, Hit me up! Fetching more information...</h4></Flex>
 
-## getInTouch
 <Grid gap={2} columns={[2, '1fr 1fr']}>
   <Box>
-    <Heading variant='styles.h3' sx={{mb: 0}}>Email</Heading>
-    <Link href='mailto:mail2ypd@gmail.com' variant='styles.a'>mail2ypd@gmail.com</Link>
-    <Divider />
-    <Heading variant='styles.h3' sx={{mb: 0,}}>Twitter</Heading>
-    <Link href='https://twitter.com/Amorpheuz/' variant='styles.a'>https://twitter.com/Amorpheuz/</Link>
-    <Divider />
-    <Heading variant='styles.h3' sx={{mb: 0,}}>DEV Community</Heading>
-    <Link href='https://dev.to/amorpheuz' variant='styles.a'>https://dev.to/amorpheuz</Link>
-    <Divider />
+    <Heading variant='styles.h2' sx={{mb:0}}>getInTouch</Heading>
+    <Link href='mailto:mail2ypd@gmail.com' variant='styles.a' sx={{fontSize: '2.5rem', mr: '2'}}><FontAwesomeIcon icon={faEnvelopeSquare} /></Link>
+    <Link href='https://github.com/Amorpheuz/' variant='styles.a' sx={{fontSize: '2.5rem', mr: '2'}}><FontAwesomeIcon icon={faGithubSquare} /></Link>
+    <Link href='https://www.linkedin.com/in/Amorpheuz/' variant='styles.a' sx={{fontSize: '2.5rem', mr: '2'}}><FontAwesomeIcon icon={faLinkedin} /></Link>
+    <Link href='https://twitter.com/Amorpheuz/' variant='styles.a' sx={{fontSize: '2.5rem', mr: '2'}}><FontAwesomeIcon icon={faTwitterSquare} /></Link>
+    <Link href='https://dev.to/amorpheuz' variant='styles.a' sx={{fontSize: '2.5rem'}}><FontAwesomeIcon icon={faDev} /></Link>
   </Box>
   <Box>
-    <Heading variant='styles.h3' sx={{mb: 0}}>GitHub</Heading>
-    <Link href='https://github.com/Amorpheuz/' variant='styles.a'>https://github.com/Amorpheuz/</Link>
-    <Divider />
-    <Heading variant='styles.h3' sx={{mb: 0}}>LinkedIn</Heading>
-    <Link href='https://www.linkedin.com/in/Amorpheuz/' variant='styles.a'>https://linkedin.com/in/Amorpheuz/</Link>
-    <Divider />
+    
   </Box>
 </Grid>
 <Heading variant='styles.h2'>fetchProjects</Heading>
