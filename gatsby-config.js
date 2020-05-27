@@ -4,8 +4,8 @@ module.exports = {
     description: "A blog and portfolio site for Yash Dave",
     keywords: ["tech", "blog"],
     siteUrl: "https://amorpheuz.github.io",
-    siteImage: "terminal-open-graph-image.jpg",
-    profileImage: ``,
+    siteImage: "favicon-128x128.png",
+    profileImage: `favicon-64x64.png`,
     lang: `en`,
     config: {
       sidebarWidth: 280
