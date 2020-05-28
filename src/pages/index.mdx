@@ -4,7 +4,6 @@ navigationLabel: Home
 
 import { format } from 'date-fns';
 import { mix } from '@theme-ui/color';
-import { jsx } from "theme-ui";
 
 export const favTechs = ['React.js', 'Gatsby', 'JavaScript', '.NET Core', 'C#', 'Python', 'HTML5', 'CSS3', 'C', 'Java', 'SQL Server', 'MySQL',]
 
@@ -24,7 +23,7 @@ export const favTechs = ['React.js', 'Gatsby', 'JavaScript', '.NET Core', 'C#', 
 <Divider/>
 <Flex><Spinner height='30' /><h4>You seem fun to talk with, Hit me up! Fetching more information...</h4></Flex>
 
-<Grid gap={2} columns={[2, '1fr 1fr']}>
+<Grid gap={2} columns={[1, '1fr 2fr']}>
   <Box>
     <Heading variant='styles.h2'>getInTouch</Heading>
     <Link href='mailto:mail2ypd@gmail.com' variant='styles.a' sx={{ mr: '1' }}>
@@ -68,6 +67,7 @@ export const favTechs = ['React.js', 'Gatsby', 'JavaScript', '.NET Core', 'C#', 
     }
   </Box>
 </Grid>
+<Divider/>
 <Heading variant='styles.h2'>fetchProjects</Heading>
 <SourceList filter='projects'>
   {projects => (
