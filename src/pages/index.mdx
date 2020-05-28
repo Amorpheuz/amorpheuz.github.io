@@ -8,16 +8,20 @@ import { jsx } from "theme-ui";
 
 export const favTechs = ['React.js', 'Gatsby', 'JavaScript', '.NET Core', 'C#', 'Python', 'HTML5', 'CSS3', 'C', 'Java', 'SQL Server', 'MySQL',]
 
+<Divider/>
 <Flex><Spinner height='30' /><h4>Requesting Introduction...</h4></Flex>
 
 # helloWorld
 <Message variant='success' mb={2}>
   <Text variant='styles.h4'>Hey Everyone, my name is Yash Dave!</Text>
   I develop awesome WebApps based on React.js, Gatsby and Pure HTML+CSS+JS. I am also an upcoming Data Scientist currently pursuing Python Profeciency.
+  <Divider/>
+  <Button as='a' mr={2} href='documents/YashDave.pdf' variant='primary' >Resume📄</Button>
+  <Link href='documents/YashDave.txt'>.txt version</Link>
 </Message>
 
 <Message variant='success' mb={2}>Dabbling into experimental cutting edge new technologies is my favorite pastime. I love motivating others to get into Open-Source and writing occasional blogs!</Message>
-<br />
+<Divider/>
 <Flex><Spinner height='30' /><h4>You seem fun to talk with, Hit me up! Fetching more information...</h4></Flex>
 
 <Grid gap={2} columns={[2, '1fr 1fr']}>
