@@ -1,0 +1,29 @@
+---
+title: Dev Diary - Hacktoberfest 2019, Week 2 & 3 - Refactors and Bug Fixes!
+tags: ['javascript', 'css','hacktoberfest', 'webdev']
+date: 2019-10-20
+---
+Hello Everyone! During week 1, I had sent out my first PR to the [DEV](https://github.com/thepracticaldev/dev.to) Repo, and I continued the mission through weeks 2 and 3. I have already become considerably familiar with workings of the Repo and thus felt it was the better choice while I had less time to spare. By the way, do check out their Repo if you haven't yet!
+
+For Week 2, the issue I helped tackle was [Issue #3777](https://github.com/thepracticaldev/dev.to/issues/3777). An issue for fixing lint errors throughout the JavaScript files of the repo.
+
+It consisted of tons of files that required fixing and it was recommended to resolve one file at a time. By the time I viewed the issue, [Rhymes](https://dev.to/rhymes) had already listed an extremely helpful task-list for the list of remaining files and was actively helping out to mark which files had already been grabbed or were still up for grabs. I started taking grabbing one file at a time and resolving them one after another. While testing out one of the Pull Requests fully, I also ended up on an issue where Errors were being printed to the `/Comments` sub-page of the articles due to it trying to reference an element that is only present on the article page itself. Here's a list of all the PRs I opened for the files I fixed:
+- [Refactor initializeArticleReactions.js](https://github.com/thepracticaldev/dev.to/pull/4303)
+- [Refactor/fix initializeCommentDropdown.js](https://github.com/thepracticaldev/dev.to/pull/4318)
+- [Fix eslint issues in initializeCommentDate.js](https://github.com/thepracticaldev/dev.to/pull/4319)
+- [Fix eslint issues in initializeCommentPreview.js](https://github.com/thepracticaldev/dev.to/pull/4320)
+- [Fix eslint issues in initializeSettings.js](https://github.com/thepracticaldev/dev.to/pull/4329)
+- [Fix JavaScript Console errors in /Comments sub-page of any article](https://github.com/thepracticaldev/dev.to/pull/4446)
+
+🤯🤯 So many of them! Even I don't know how I managed that. They weren't smooth sailing but I did learn a lot of lessons while tackling them!
+- Always test-out manually whatever you are refactoring. Just because it's appearing correct visually doesn't mean it is fully working. I noticed the reaction numbers loading correctly but forgot to test out the functionality for actually reacting to the article which turned out to be broken. 😅
+- Never forget to check the contents of a file it runs an eslint auto-fix due to a pre-commit hook. Turns out it might break itself. 😆
+- `if(element)` is a thing in JavaScript, the things about JavaScript I learn daily, hehe. 😅😅
+
+That list also means I have fully completed the Hacktoberfest Challenge. But I feel unsatisfied! Surely I am not the only one? Turns out I ain't, I loved reading that so many others were feeling the same and had become addicted to contributing! Maybe I am one of them now. 😳 Yay! 🎉🎉
+
+Week 3 turned out to be a Responsiveness fix. [Dev.to](Dev.to) has slowly become my pastime for the day when I am out and about, maybe chilling a bit post-lunch or riding a taxi back home (Darn you rains). Thus a lot of browsing was done on my trusty smartphone, via the PWA. While replying to one of the Hacktoberfest posts, I tried attaching a Screenshot and turns out Images were overflowing the container in the Comment Previews!? Time to open an issue, [Images in comment preview are not scaled down to container width on mobile #4382](https://github.com/thepracticaldev/dev.to/issues/4382). 👨‍💻 
+
+I picked it up once I was done with the Refactor fixes and opened my favorite browser to tackle such issues, the [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/). Seriously, give it a try if you have never done it, I ensure you it will be love at first sight! I straight up opened two tabs, one with the comment preview and one with an article preview (which I knew worked correctly). I compared the behavior of images on both and found the `img` element in comment preview to be lacking the CSS `max-width: 100%`. Next, I tackled on how to ensure that the CSS only affects the images inside the preview-box of the comments and Aha! I had a working solution. I tested it out with varying resolutions to ensure that no funny behavior was occurring and opened my [PR](https://github.com/thepracticaldev/dev.to/pull/4466).
+
+Currently, I am waiting for my PR to get fully approved and resolve errors if any. My aim for the remainder of Hacktoberfest is to find a new Repo to contribute to and successfully submit a satisfying PR. How is your Hacktoberfest going till now? Feel free to hit me up in DMs for any beginner-ish level troubles you are encountering with Hacktoberfest. Have a *PR filled* Hacktoberfest to you all! 🎆🎊
