@@ -18,11 +18,11 @@ module.exports = {
         source: ["posts", "projects"]
       }
     },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://amorpheuz.github.io`,
-      },
-    }
+    // {
+    //   resolve: `gatsby-plugin-canonical-urls`,
+    //   options: {
+    //     siteUrl: `https://amorpheuz.github.io`,
+    //   },
+    // }
   ]
 };
