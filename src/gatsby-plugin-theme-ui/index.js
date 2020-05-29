@@ -1,4 +1,4 @@
-import codeTheme from "@theme-ui/prism/presets/night-owl-light.json";
+import codeTheme from "@theme-ui/prism/presets/prism-funky.json";
 import baseTheme from "@pauliescanlon/gatsby-theme-terminal/src/gatsby-plugin-theme-ui";
 
 export default {
