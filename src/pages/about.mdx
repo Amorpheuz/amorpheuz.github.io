@@ -2,10 +2,72 @@
 navigationLabel: About
 ---
 
+import { jsx } from 'theme-ui';
+
 # aboutMe
 
-Hey Visitor!👋 My name is Yash Dave, a Front-end developer and a budding Data Science Enthusiast from the town of Vadodara, Gujarat, India. Creating websites that look beautiful and are performant is my passion, and ensuring they are accessible is my mission! 
-
-I am currently pursuing a Masters in Computer Applications with Data Science at Symbiosis Internation University. I am also currently intrigued by Blockchain & Smart Contracts, and the possibilities they can help realize.
-
-I love working with Open Source Tech while also contributing to them. I am a proud Mozillian, part of Mozilla Gujarat, and contribute to the DEV Community frequently. Encouraging and helping beginners contribute to Open Source is one of my favorite past-times.
+<Grid gap={2} columns={[1, '2fr 1fr']}>
+  <Box>
+    Hey Visitor!👋 My name is Yash Dave, a Front-end developer and a budding Data Science Enthusiast from the town of Vadodara, Gujarat, India. 
+    Creating websites that look beautiful and are performant is my passion, and ensuring they are accessible is my mission! 
+    <Divider/>
+    I am currently pursuing a Masters in Computer Applications with Data Science at Symbiosis Internation University. 
+    I am also currently intrigued by Blockchain & Smart Contracts, and the possibilities they can help realize.
+    <Divider/>
+    I love working with Open Source Tech while also contributing to them. 
+    I am a proud Mozillian, part of Mozilla Gujarat, and contribute to the DEV Community frequently. 
+    Encouraging and helping beginners contribute to Open Source is one of my favorite past-times.
+  </Box>
+  <Box 
+    sx={{
+        display: 'flex',
+        alignItems: 'center',
+        p: 2
+    }}>
+    <Image src="../images/yash_512.jpg"/>
+  </Box>
+</Grid>
+<Divider/>
+<Grid gap={2} columns={[1, '1fr 1fr 1fr']}>  
+    <Box>   
+        <Heading variant='styles.h2'>fetchExperience</Heading>
+        <Heading variant='styles.h4' mb={0}>Gateway NINtec Pvt. Ltd.</Heading>
+        <Text>Software Intern</Text>
+        <Text variant='styles.small'>Jan 2019 - May 2019</Text>
+        <Divider />
+        <Heading variant='styles.h4' mb={0}>Potent Embedded Systems</Heading>
+        <Text>Software Intern</Text>
+        <Text variant='styles.small'>May 2018 - Jun 2018</Text>
+        <Divider />
+    </Box>
+    <Box>   
+        <Heading variant='styles.h2'>fetchVolunteering</Heading>
+        <Heading variant='styles.h4' mb={0}>SICSR ACM Student Chapter</Heading>
+        <Text>Vice Chair</Text>
+        <Text variant='styles.small'>Nov 2019 - Present</Text>
+        <Divider />
+        <Heading variant='styles.h4' mb={0}>Facebook Developer Circles - Pune</Heading>
+        <Text>Moderator</Text>
+        <Text variant='styles.small'>Sep 2019 - Present</Text>
+        <Divider />
+        <Heading variant='styles.h4' mb={0}>Computers@NUV</Heading>
+        <Text>Vice President & Publisher</Text>
+        <Text variant='styles.small'>Jun 2017 - Oct 2018</Text>
+        <Divider />
+        <Heading variant='styles.h4' mb={0}>Change Vadodara Campaign</Heading>
+        <Text>Student Volunteer</Text>
+        <Text variant='styles.small'>May 2017 - Jun 2017</Text>
+        <Divider />
+    </Box>
+    <Box>   
+        <Heading variant='styles.h2'>fetchEducation</Heading>
+        <Heading variant='styles.h4' mb={0}>Masters in Computer Applications - Data Science</Heading>
+        <Text>Symbiosis International University</Text>
+        <Text variant='styles.small'>Jun 2019 - Present</Text>
+        <Divider />
+        <Heading variant='styles.h4' mb={0}>Bachelor of Computer Applications</Heading>
+        <Text>Navrachana University</Text>
+        <Text variant='styles.small'>Jun 2016 - May 2019</Text>
+        <Divider />
+    </Box>
+</Grid>
