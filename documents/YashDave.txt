@@ -1,0 +1,81 @@
+Yash
+DaveD-504, The Oakwood, Road - C, Vadodara, Gujarat, India - 391410Phone: +91-97278 35873Email: mail2ypd@gmail.comLinkedIn: linkedin.com/in/amorpheuzTwitter: twitter.com/amorpheuzGithub: github.com/amorpheuzFrontend developer with experience in building webapps based on React.js and Pure HTML + CSS + JavaScript. Successfully completed 10 unique projects, each one having its own set of accomplished challenges. Backend development enthusiast with knowledge of .NET Core, PostgreSQL, MS-SQL, and MySQL. Love to experiment with new technologies, promote & help beginners getting comfortable with Open Source and an Occasional Blogger.
+
+=============================================
+SKILLS
+=============================================
+* React.js
+* JavaScript
+* HTML5 + CSS3
+* Bootstrap* C#, .NET Core
+* Python
+* PostgreSQL, MS-SQL, MongoDB, and Firebase* Git
+* VS Code
+* Adobe Illustrator
+* Adobe XD
+* Linux, Windows, and WSL
+=============================================
+EXPERIENCE
+=============================================
+2019/01 - 2019/05
+Software Intern / NINtec Business Consulting LLP, Ahmedabad, Gujarat
+o Wrote code on .NET Core platform using Visual Studio, Entity Framework and MS-SQL.
+o Built databases and table structures following ORM methodology for web applications.
+o Evaluated project requirements & specifications and developed software application that surpassed mentor's expectations.
+
+2018/05 - 2018/06
+Software Intern / Potent Embedded Systems, Vadodara, Gujarat
+o Created UML Diagrams for Stock Management application, further used by Software Developers to develop the project.
+o Created modern website for subsidiary of the firm called TraxBee.
+o Designed intuitive UI for Stock Management System.
+
+=============================================
+EDUCATION
+=============================================
+JUNE 2019 - CURRENT
+Master of Science - Computer Applications / Symbiosis Institute of Computer Studies and Research, Pune
+About to enter my final year for the Degree. Pursuing a specialization in the Data Science field.
+
+JUNE 2016 - MAY 2019
+Bachelor of Computer Applications / Navrachana University, Vadodara
+Graduated with a CGPA of 9.5 / 10 (UGC 10-point system).
+
+=============================================
+PROJECTS AND OPEN SOURCE CONTRIBUTIONS
+=============================================
+* DEV Community
+o Contributing via opening Issues and Pull Requests related to Document Fixes/Updates, UI bugs and JavaScript Linting.
+
+* Onion Rooting
+o A DApp which makes used of Ethereum smart contracts which aims to solve the problem of crop/produce hoarding by intermediaries. Link to demo: The Onion Rooting 
+o Technology Stack: React.js, Solidity, web3.js and Bootstrap.
+
+* The Intelligent Donor
+o A webapp aimed as a solution for people in urgent need of finding Blood Donors.
+o Technology Stack: Bootstrap, Firebase and JavaScript.
+
+* Auto Issue Labeler
+o A console-based app that helps automatically classify a GitHub issue and label them.
+o Technology Stack: C#, .NET Core and ML.NET
+
+* Mozilla India
+o Contributed via opening Issues and Pull Requests related to an older version of site which was based on Pure HTML, CSS, and JS along with using the framework Bulma.
+
+* Mozilla Gujarat
+o Contributing via opening Issues, having mentoring sessions on best practices with the contributors and reviewing Pull Requests.
+
+=============================================
+ACTIVITIES AND ACCOMPLISHMENTS
+=============================================
+* Current Vice-Chair of SICSR ACM Student Chapter.
+* Enthusiastic Mozillian and actively participating with Mozilla Gujarat, Mozilla Pune, and Mozilla India.
+* Moderator and avid member of Facebook Developer Circle: Pune.
+* Recipient of Developer Circle Training Courses Scholarship (Track 1) for Web Development courses under OpenClassrooms which included: Build web apps with ReactJS, Learn Programming with JavaScript and Create Web Page Layouts with CSS.
+* Delivered talks about Front-end concepts, React.js and Best Programming practices on multiple occasions.
+* Successfully organized 4th National ACM-W Hackathon as part of the Technical Team overseeing hackers compete from all-over India.
+* Runner-up Symtaxify Hackathon, 2019.
+* Vice-Chair and Publisher of Computers@NUV from June 2017 - October 2018.
+* Successfully organized TechNUVate, college Techfest, for 2017 & 2018 as part of the Core Organizing Team with each seeing 200+ attendees.
+* Recipient of M.V.P. Local Hack Day - Vadodara, 2018. 
+
+

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./node_modules/@pauliescanlon/gatsby-theme-terminal/src/pages/404.js"],"names":[],"mappings":"2FAAA,gCAEe,4BAAM","file":"component---node-modules-pauliescanlon-gatsby-theme-terminal-src-pages-404-js-ebe78ca24f4bfc776ff4.js","sourcesContent":["import React from 'react'\n\nexport default () => <div>404 page not found</div>\n"],"sourceRoot":""}
