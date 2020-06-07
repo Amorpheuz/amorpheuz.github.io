@@ -7,7 +7,7 @@ date: 2019-09-30
 The guide is no longer up to date as there have been significant changes to the platform. Do refer to latest guidelines on https://docs.dev.to/ . Feel free to dm me if you are facing any trouble in the setup procedure on Manjaro!
 
 ---
-## The guide
+## The Guide
 As Hacktoberfest approached and my WSL setup of dev.to's repo not behaving properly when it comes to Acceptance testing; I finally steeled myself up for switching to a Linux distro for the same. Manjaro had always been on the back of my find from reading a lot of praise about it online and hearing about it from peers. I wanted something beginner-friendly, with a great team & community behind it along with the ability to game smoothly during the rare occasions I was free. Manjaro seemed to check all these boxes and thus I was all aboard the Manjaro train.
 
 On a different note, this post is also going to talk about my experience too along with the steps. I also won't go fully into finer details of every step as that will make this guide more into a booklet, feel free to ask below if you are stuck somewhere!
@@ -34,7 +34,8 @@ I grabbed the Snaps for Spotify and GitKraken via Bauh but from past experience 
 1. Use `git clone` along with the Git Clone URL on the package page to download the repo at the location of your choice.
 2. Take your terminal into the downloaded repo via `Cd`.
 3. Run `makepkg -si` where `s` will generate the source tarball for the repo and `i` will install it after a successful build. Be ready with your root password for the install!
-![Personal Reqs Done](https://media.giphy.com/media/l0He4nkyI5cMhXzvW/giphy.gif)
+
+<Image src='https://media.giphy.com/media/l0He4nkyI5cMhXzvW/giphy.gif' alt='Personal Requirements done'/>
 
 ### Dev.to's Prerequisites
 Next came setting up dev.to's repo for development. It can be an intimidating task at first but stick it out and you are in for a treat! Open the [Linux Installation guide](https://docs.dev.to/installation/linux/) from their docs and keep it handy. 
@@ -53,7 +54,7 @@ Next came setting up dev.to's repo for development. It can be an intimidating ta
   - Next run `sudo ./postgresql-10.10-2-linux-x64.run` or whatever the package name might be to start the installer. Follow the instruction. *Be sure to remember the password set for postgres here*.
   - If you need a GUI for PostgreSQL, you will need `pgAdmin4`. The one that comes by default with the PostgreSQL installer doesn't work correctly on my PC, So I grabbed it via `Pacman`. Run `sudo Pacman -S pgadmin4` to install it.
 
-![Almost done?!](https://media.giphy.com/media/7JTpNYu7oYGX98KJkL/giphy.gif)
+<Image src='https://media.giphy.com/media/7JTpNYu7oYGX98KJkL/giphy.gif' alt='Almost done...'/>
 
 ### The Dev.to Repo
 - Once done with PostgreSQL, it's finally time to move on to getting the actual repo on your system. Follow the [Steps](https://docs.dev.to/installation/linux/#installing-dev) on the Linux Setup guide to Fork and Clone `dev.to` repo. Follow it thoroughly till you reach **Step 5**.
@@ -64,6 +65,6 @@ Finally, if all goes well, you will get an awesome `Dev` Banner in your console 
 
 Run `bin/startup` to see the server bootup and have the massive ecosystem of dev running on your tiny computer.
 
-![Amazing](https://media.giphy.com/media/5p2wQFyu8GsFO/giphy.gif)
+<Image src='https://media.giphy.com/media/5p2wQFyu8GsFO/giphy.gif' alt='Amazing!'/>
 
 Have an amazing Hacktoberfest, all the best with your PRs and Happy Coding!
