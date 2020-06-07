@@ -1,4 +1,4 @@
-# amorpheuz.github.io
+# amorpheuz.dev
 
 Welcome, Everyone!👋 This is the codebase for my, Yash Dave's, portfolio website.
 

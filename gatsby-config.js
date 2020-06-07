@@ -3,7 +3,7 @@ module.exports = {
     name: "Amorpheuz's Portfolio",
     description: "A blog and portfolio site for Yash Dave",
     keywords: ["tech", "blog", "frontend developer", "data scientist", "frontend dev", "amorpheuz", "yash dave", "react dev", "javascript dev"],
-    siteUrl: "https://amorpheuz.github.io",
+    siteUrl: "https://amorpheuz.dev",
     siteImage: "images/favicon-128x128.png",
     profileImage: `images/favicon-64x64.png`,
     lang: `en`,
@@ -21,7 +21,7 @@ module.exports = {
     // {
     //   resolve: `gatsby-plugin-canonical-urls`,
     //   options: {
-    //     siteUrl: `https://amorpheuz.github.io`,
+    //     siteUrl: `https://amorpheuz.dev`,
     //   },
     // }
   ]
