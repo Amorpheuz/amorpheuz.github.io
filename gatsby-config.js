@@ -23,6 +23,26 @@ module.exports = {
       options: {
         siteUrl: `https://amorpheuz.dev`,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [
+          `/404`,
+          `/dummy-page/`,
+          `/dev-404-page/`,
+          `/404.html`
+        ],
+        createLinkInHead: true,
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [
+          {userAgent: '*', disallow: ['/404','/dummy-page/'], allow: ['/']}
+        ]
+      }
+    },
   ]
 };
