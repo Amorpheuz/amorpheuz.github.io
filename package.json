@@ -3,7 +3,7 @@
   "private": true,
   "description": "A blog and portfolio site for Yash Dave",
   "version": "0.1.1",
-  "author": "Yash Dave <mail2ypd@gmail.com>",
+  "author": "Yash Dave <connect@amorpheuz.dev>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
     "@mdx-js/react": "^1.5.7",

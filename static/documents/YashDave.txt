@@ -1,5 +1,19 @@
 Yash
-DaveD-504, The Oakwood, Road - C, Vadodara, Gujarat, India - 391410Phone: +91-97278 35873Email: mail2ypd@gmail.comLinkedIn: linkedin.com/in/amorpheuzTwitter: twitter.com/amorpheuzGithub: github.com/amorpheuzFrontend developer with experience in building webapps based on React.js and Pure HTML + CSS + JavaScript. Successfully completed 10 unique projects, each one having its own set of accomplished challenges. Backend development enthusiast with knowledge of .NET Core, PostgreSQL, MS-SQL, and MySQL. Love to experiment with new technologies, promote & help beginners getting comfortable with Open Source and an Occasional Blogger.
+Dave
+D-504, The Oakwood, Road - C, Vadodara, Gujarat, India - 391410
+
+Phone: +91-97278 35873
+
+Email: connect@amorpheuz.dev
+
+LinkedIn: linkedin.com/in/amorpheuz
+
+Twitter: twitter.com/amorpheuz
+
+Github: github.com/amorpheuz
+
+
+Frontend developer with experience in building webapps based on React.js and Pure HTML + CSS + JavaScript. Successfully completed 10 unique projects, each one having its own set of accomplished challenges. Backend development enthusiast with knowledge of .NET Core, PostgreSQL, MS-SQL, and MySQL. Love to experiment with new technologies, promote & help beginners getting comfortable with Open Source and an Occasional Blogger.
 
 =============================================
 SKILLS
@@ -7,13 +21,16 @@ SKILLS
 * React.js
 * JavaScript
 * HTML5 + CSS3
-* Bootstrap* C#, .NET Core
+* Bootstrap
+* C#, .NET Core
 * Python
-* PostgreSQL, MS-SQL, MongoDB, and Firebase* Git
+* PostgreSQL, MS-SQL, MongoDB, and Firebase
+* Git
 * VS Code
 * Adobe Illustrator
 * Adobe XD
-* Linux, Windows, and WSL
+* Linux, Windows, and WSL
+
 =============================================
 EXPERIENCE
 =============================================
