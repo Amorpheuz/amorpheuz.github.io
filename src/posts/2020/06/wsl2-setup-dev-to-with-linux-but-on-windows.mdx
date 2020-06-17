@@ -1,0 +1,128 @@
+---
+title: WSL2 - Setup DEV.to with Linux but on Windows!
+tags: ['tutorial', 'wsl', 'DEV Community', 'contribute', 'guide', 'windows']
+date: 2020-06-17
+---
+
+Hey Everyone! In this post, I will be outlining how you can run the DEV Community website on your windows machine with all your dependencies installed to Linux. [Installation - DEV Docs](https://docs.dev.to/installation/) lists a variety of methods you can use to do the same, and we will be following the Linux Guide with minor modifications.
+
+WSL was the first time where I was able to work with a Linux environment. Since then, the idea of running Windows and Linux together has always been fascinating to me. I have been dabbling with dual-boot systems of Windows and Manjaro, but it does keep breaking time to time leading me to setup Manjaro again. With the introduction of WSL2 to Windows Stable with version 2004, I was excited to try setup DEV again on Windows. WSL2 brings a lot of improvements over WSL1, including better support for applications, and you can read more about them in this [VS Code Blog](https://code.visualstudio.com/blogs/2019/09/03/wsl2#_whats-changing-in-wsl-2) from when WSL2 was in beta.
+
+### Prerequisites 
+Before we start, if you are new to `Windows Subsystem For Linux`, I recommend following the [Install Windows Subsystem for Linux (WSL) on Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10) documentation on how to install it. After setting up WSL2 as the default version, download the [Ubuntu 18.04 LTS](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q) distribution. 
+
+[Visual Studio Code](https://code.visualstudio.com/) is an open-source code editor by Microsoft that has a ton of features. One of its extensions allows a developer to Remote into the WSL environment and directly develop over there! I recommend installing the Visual Studio Code application with [Remote development in WSL](https://code.visualstudio.com/remote-tutorials/wsl/getting-started) extension if you aren't comfortable with terminal-based editors.
+
+After completing the initial setup, we move on to another bunch of prerequisites, the repository prerequisites!
+
+### Installing the DEV community's prerequisites
+#### Ruby & rbenv 
+- [Rbenv](https://github.com/rbenv/rbenv) is a nifty tool that allows developers to set up a [Ruby](https://www.ruby-lang.org/en/) environment easily. Grab a quick note of the Ruby Version listed in the badge of DEV's README.md file before you begin.
+- Install Ruby's dependencies with the following commands.
+```bash
+sudo apt-get update 
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev
+```
+- Clone rbenv and Ruby with the following set of commands, replace `*.*.*` in the second-last and third-last lines with the ruby version you noted earlier. If you are not using `Bash` as your shell, replace `~/.bashrc` with the config file of your shell.
+```bash
+cd 
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer | bash
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+ exec $SHELL
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+rbenv install *.*.* 
+rbenv global *.*.* 
+ruby -v
+```
+
+#### Nvm, Node & Yarn 
+- Like how Ruby has a version manager, [Node](https://nodejs.org/en/) has one too, called [nvm](https://github.com/nvm-sh/nvm).  Take a note of the node version from [here](https://github.com/thepracticaldev/dev.to/blob/master/.nvmrc). To install it, follow the commands below. Replace `*.*` with the version in the link above.
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+exec $SHELL
+nvm install *.*
+node -v
+```
+- Then install [Yarn](https://classic.yarnpkg.com/lang/en/) with the following commands.
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn
+yarn -v
+```
+
+#### PostgreSQL 
+- PostgreSQL is the database that powers DEV. Let's install it next! Run the following commands to set up PostgreSQL. Make sure to replace `$YOUR_USERNAME` with the username you set for Ubuntu.
+```bash
+sudo apt update && sudo apt install postgresql postgresql-contrib libpq-dev
+sudo -i service postgresql start
+sudo -u postgres createuser -s $YOUR_USERNAME
+createdb
+sudo -u $YOUR_USERNAME psql
+```
+- The last command will open PostgreSQL's shell for you. Use the command `\password` to set a password for your user. After setting up the password, use the command `\quit` to exit.
+- Use the command `sudo -i service postgresql start` to start PostgreSQL server everytime you restart your WSL machine.
+
+#### Imagemagick 
+- [Imagemagick](https://imagemagick.org/) is an open-source Image manipulation software suite that is used by DEV and lots of other projects to modify and optimize images. Although there is an option to install [Imagemagick from the source](https://imagemagick.org/script/install-source.php), we will be installing it as a package via `apt`. I have noticed from different issues on github that installing from the source lead to buggy installs on WSL.
+```bash
+sudo apt update && sudo apt install imagemagick
+```
+- To check if the installation was successful, use the command `identify` with a path to a `.png` or `.jpg` file, example `identify 10489.png`. **Pro Tip**, to open the Linux environment in Window's file explorer, use `explorer.exe .`!
+
+#### Redis 
+- [Redis](https://redis.io/) is an in-memory data structure store which can be used as a database, cache and message broker. Use the following commands to install it.
+```bash
+sudo apt update && sudo apt install redis-server
+sudo -i service redis-server start
+```
+- Execute the command `redis-cli` to verify its installation. It will open the Redis CLI. Type `exit` in the Redis CLI to go back to the shell.
+- Use the command `sudo -i service redis-server start` to start the Redis server everytime you restart your WSL machine.
+
+#### Elasticsearch 
+- DEV uses [Elasticsearch](https://www.elastic.co/elasticsearch/) for lightning-fast search results. Follow the commands below to install it.
+```bash
+cd
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.5.2-linux-x86_64.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-7.5.2-linux-x86_64.tar.gz.sha512
+shasum -a 512 -c elasticsearch-oss-7.5.2-linux-x86_64.tar.gz.sha512 
+tar -xzf elasticsearch-oss-7.5.2-linux-x86_64.tar.gz
+cd elasticsearch-oss-7.5.2/
+echo 'export ES_HOME="$HOME/elasticsearch-7.5.2/"' >> ~/.bashrc
+echo 'export PATH="$ES_HOME/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+```
+- To run the Elasticsearch server, run the command `elasticsearch`.
+
+### Installing DEV 
+Congratulations! You are almost done with your journey, now for the final stretch. We will be setting up your fork of the DEV repository on your machine.
+1. Fork DEV's repository by clicking on the `Fork` button on the top right of the [dev.to repository](https://github.com/thepracticaldev/dev.to) on GitHub.
+2. Clone your forked repository. Here's a quick rundown of the concepts of [Forking a repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) by GitHub if you are new to Git & GitHub.
+3. Run the command `gem install bundler` within the `dev.to` folder on your machine which you get after cloning your fork. All the further instructions refer to items within the `dev.to` folder unless mentioned otherwise.
+4. Now, we need to set up some configuration details for the other tools to work with your DEV fork on the local machine. 
+  - If you are a VS Code user and set up with Remote development extension, execute the command `code .`.
+  - Create a file called `application.yml` inside the `config` folder. This file will contain sensitive details and thus is automatically ignored by git via configuration in `.gitignore`. Here's more information on [gitignore](https://git-scm.com/docs/gitignore).
+5. Within the `application.yml` file, add the following piece of code. Replace `USERNAME` with the username of your ubuntu user which you also set for PostgreSQL earlier. Replace `PASSWORD` with the password for the same user while configuring PostgreSQL.
+```yml
+DATABASE_URL: postgresql://USERNAME:PASSWORD@localhost 
+```
+- I also recommend setting up GitHub credentials by following [GitHub Authentication - DEV Docs](https://docs.dev.to/backend/auth-github/). You can set up the credentials with the following format in `application.yml`. Add `Client ID` on GitHub beside `GITHUB_KEY:` and `Client Secret` beside `GITHUB_SECRET:`. Don't forget to leave a `space` (whitespace) after the `:` and before the Client ID and Client Secret. These variables enable your local copy to login with GitHub. Remove the `*******`.
+```yml
+GITHUB_KEY: *******
+GITHUB_SECRET: *******
+```
+
+Now, time to use the two magic commands `bin/setup` and `bin/startup`.
+- Make sure you have `Redis` and `PostgreSQL` Services, and `Elasticsearch` running before you fire the following command. You can check the status of services with the command `sudo -i service --status-all`, the services with `+` beside them are running.
+- Run the command `bin/setup`. This command will perform an automatic setup of all the related services and dependencies.
+
+**That was it!** After the `bin/setup` command gets completed, Run the command `bin/startup` and open `localhost:3000` in your browser to see your copy of DEV load up! It will take some time for the server to boot, I recommend waiting until `webpacker` posts `Compiled Successfully` before trying to load `localhost:3000`.
+
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> in your console windows to shut down elasticsearch and DEV server when you are done!
+
+### End Notes 
+Thank you for making it this far! I would love to see you tweet me [@Amorpheuz](https://twitter.com/Amorpheuz) a screenshot of DEV running on your local machine. If you encounter any problems or still are confused about a certain part, feel free to leave a comment or shoot a DM. 
+
+Getting Open Source Projects running on local machines if often one of the most intimidating tasks of starting contributing to one, with this post I hope I made your journey of contributing to [DEV](https://github.com/thepracticaldev/dev.to) easier!
