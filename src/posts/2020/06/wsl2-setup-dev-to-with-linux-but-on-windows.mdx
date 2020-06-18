@@ -2,6 +2,7 @@
 title: WSL2 - Setup DEV.to with Linux but on Windows!
 tags: ['tutorial', 'wsl', 'DEV Community', 'contribute', 'guide', 'windows']
 date: 2020-06-17
+dateModified: 2020-06-18
 ---
 
 Hey Everyone! In this post, I will be outlining how you can run the DEV Community website on your windows machine with all your dependencies installed to Linux. [Installation - DEV Docs](https://docs.dev.to/installation/) lists a variety of methods you can use to do the same, and we will be following the Linux Guide with minor modifications.
@@ -122,7 +123,28 @@ Now, time to use the two magic commands `bin/setup` and `bin/startup`.
 
 Press <kbd>Ctrl</kbd> + <kbd>C</kbd> in your console windows to shut down elasticsearch and DEV server when you are done!
 
-### End Notes 
-Thank you for making it this far! I would love to see you tweet me [@Amorpheuz](https://twitter.com/Amorpheuz) a screenshot of DEV running on your local machine. If you encounter any problems or still are confused about a certain part, feel free to leave a comment or shoot a DM. 
+### Bonus - Install Chrome for Testing
+DEV has a collection of Test Cases which verify that the changes made by any contributor do not end up breaking existing functionality. These test cases should always be run when submitting a new or modified functionality to DEV. New test cases must be written for new functionality.
 
-Getting Open Source Projects running on local machines if often one of the most intimidating tasks of starting contributing to one, with this post I hope I made your journey of contributing to [DEV](https://github.com/thepracticaldev/dev.to) easier!
+Chrome is required for testing for the Testing tools to render the webpages in a browser and match them against pre-defined content. This ensures that the content has been generated as it should be. To install Chrome, perform the following steps.
+- Install dependencies of chrome.
+```bash
+sudo apt install fonts-liberation libappindicator3-1 libasound2 libgbm1 libnspr4 libnss3 libxss1 xdg-utils
+```
+- Download Chrome and install it.
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+echo 'alias chrome="google-chrome-stable"' >> ~/.bashrc
+exec $SHELL
+```
+- If `sudo dpkg -i google-chrome-stable_current_amd64.deb` throws an error, try using the command `sudo apt --fix-broken install` after which execute the command `sudo dpkg -i google-chrome-stable_current_amd64.deb` again.
+- Test your installation with the following command. It will print the HTML Code of the given URL in your console upon working correctly.
+```bash
+chrome --headless --disable-gpu --dump-dom https://www.chromestatus.com/
+```
+ 
+### End Notes 
+Thank you for making it this far! I would love to see you tweet me [@Amorpheuz](https://twitter.com/Amorpheuz) a screenshot of DEV running on your local machine. If you encounter any problems or still are confused about a certain part, feel free to shoot a DM on DEV or Twitter. 
+
+Getting Open Source Projects running on local machines if often one of the most intimidating tasks of starting contributing to one, with this post I hope I made your journey of contributing to [DEV](https://github.com/thepracticaldev/dev.to) easier! You can go in-depth about many of the finer details on [DEV Docs](http://docs.dev.to/) at your own pace.
