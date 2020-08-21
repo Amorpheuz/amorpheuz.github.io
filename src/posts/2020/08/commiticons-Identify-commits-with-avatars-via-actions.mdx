@@ -1,0 +1,158 @@
+---
+title: Commiticons | Hashes are boring, Identify commits with Avatars via Actions
+tags: ['GitHub Actions', 'Workflows', 'DEV Community', 'GitHub', 'Actions', 'Identicons']
+date: 2020-08-21
+---
+
+It's a fine morning, the birds are chirping outside your window. You just had a hearty breakfast and are ready to get down to business, push some improvements to the next revolutionary project that you have been working on for the past month. You let out a small burp, chuckle to yourself and fire off `git log` to remind yourself what you did yesterday. 
+
+Immediately, a bunch of commits pop up on your screen lead by lifeless strings of chars. What a mood killer to the perfectly fine morning! Only if you had some better way to uniquely identify your commits.
+
+### My Workflow
+
+"Why should users have all the fun?", the concept of `identicons` has been around for long and many websites use it to generate a default avatar for users. They take a unique property attached to the user, such as email or username. Next, they run a hashing algorithm on it which generates a long incredibly unique string, called as a hash, from your smaller unique string. This hash is then passed to an algorithm which generates images as programmed by its dev.
+
+This is where my idea comes in. Since all git commits already have unique hashes, why not generate identicons for them? I configured a small (but interesting) workflow to automatically generate unique avatars for your commits. I call these avatars `Commiticons`, identicons but for commits! 😬🎉
+
+ >Commiticons are avatars for your commits directly saved to your GitHub Commits as a Commit Comment.
+
+Here's what the workflow does:
+
+- First, I check-out my repo with [actions/checkout](https://github.com/actions/checkout) since I want to save the Commiticons to my repo.
+   
+```yml
+- name: Checkout
+  uses: actions/checkout@v2
+```
+
+- Next, I want my Commiticons to be accompanied by a joke to make them even more fun. So, I use the infamous [icanhazdadjoke API](https://icanhazdadjoke.com/api) to grab one for me via cURL. I also must perform a few clean-up steps on them to make it simple for me to push them to the GitHub as a commit comment later.
+
+- I clean up any new lines, `\n` or `\r\n`, in the joke to prevent problems when I later push it to GitHub with `cURL`. The [sed](https://www.gnu.org/software/sed/manual/sed.html) command replaces `\n` with the `<br>` tag. Next, the [tr](https://en.wikipedia.org/wiki/Tr_(Unix)) command deletes `\r` which is present in case of Windows Line Endings. Read more about [\r](https://en.wikipedia.org/wiki/Carriage_return#Computers), [\n](https://en.wikipedia.org/wiki/Newline#In_programming_languages) and [the problem of CRLF](https://www.hanselman.com/blog/CarriageReturnsAndLineFeedsWillUltimatelyBiteYouSomeGitTips.aspx).
+   
+```yml
+- name: Get a dad-joke
+  run: |
+    echo "::set-env name=TEMP::$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/ | sed -r ':a;N;$!ba;s/\n/<br>/g' | tr -d '\r')"
+```
+
+- Next, I replace all " in the text with ', via tr, in order to avoid clashes with the " with the commands in the cURL command. The $TEMP is the env variable that saves output of previous command.
+   
+```yml
+- name: Escape double-quotes
+  run: |
+    echo "::set-env name=DAD_JOKE::$(echo "$TEMP" | tr \" \')"
+```
+
+> These commands are enclosed within echo and set-env to save them as Environment variables for future steps.   
+
+- Now, I use the [GitHub REST API v3](https://docs.github.com/en/rest) to push them as a commit comment. Here are some more details about how to [Create a commit comment](https://docs.github.com/en/rest/reference/repos#create-a-commit-comment). The request is also [authenticated by using GITHUB_TOKEN](https://docs.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token).
+
+```yml
+- name: Create commit comment
+  run: |
+    curl \
+    -X POST \
+    -H "Accept: application/vnd.github.v3+json" \
+    -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        $GITHUB_API_URL/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/comments \
+        -d "{\"body\":\"| ![Commiticon](https://avatars.dicebear.com/api/human/$GITHUB_SHA.svg?h=250) | $DAD_JOKE |\n|:-:|:-:|\"}"
+   ```
+   
+> The process of generating the Commiticons is handled by [Dicebear Avatars](https://avatars.dicebear.com/), a hidden gem that I was glad I came across! They are the ❤ and soul of Commiticons.
+
+- Finally, I save the svg image to my repo which is already present here courtesy of actions/checkout in first step!
+
+- I also need to push it to my repo via git. You might be going "Wait what? Isn't this already GitHub?". It's a Gotcha that had me surprised when I was new to Actions too! In simple terms, actions are their own computers which run automatically by following a script which we provide them (our workflow files).
+
+```yml
+- name: Write Commiticon
+  run: |
+    curl https://avatars.dicebear.com/api/human/$(echo $GITHUB_SHA).svg?h=250 --output .commiticons/$(echo $GITHUB_SHA).svg
+
+- name: Push Changes
+  run: |
+    git config user.name Amorpheuz
+    git config user.email connect@amorpheuz.dev
+    git add .commiticons/
+    git commit -m "Generated Commiticon for: $GITHUB_SHA"
+    git push
+```
+
+### Yaml File or Link to Code
+
+The repository for Commiticons can be found at https://github.com/Amorpheuz/Commiticons!
+
+Workflow file:
+```yml
+name: Generate Commiticon
+
+# Controls when the action will run. Triggers the workflow on push
+# events but only for the main branch
+on:
+  push:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+    # Checkout latest commit
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Fetch a dad joke from icanhazdadjoke and replace newlines with <br> tag
+    - name: Get a dad-joke
+      run: |
+        echo "::set-env name=TEMP::$(curl -H "Accept: text/plain" https://icanhazdadjoke.com/ | sed -r ':a;N;$!ba;s/\n/<br>/g' | tr -d '\r')"
+    
+    # Replace double quotes with single quotes to avoid clashes in further text
+    - name: Escape double-quotes
+      run: |
+        echo "::set-env name=DAD_JOKE::$(echo "$TEMP" | tr \" \')"
+
+    # Add Commiticon as Commit Comment
+    - name: Create commit comment
+      run: |
+        curl \
+        -X POST \
+        -H "Accept: application/vnd.github.v3+json" \
+        -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        $GITHUB_API_URL/repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/comments \
+        -d "{\"body\":\"| ![Commiticon](https://avatars.dicebear.com/api/human/$GITHUB_SHA.svg?h=250) | $DAD_JOKE |\n|:-:|:-:|\"}"
+    
+    # Write file to .commiticons folder
+    - name: Write Commiticon
+      run: |
+        curl https://avatars.dicebear.com/api/human/$(echo $GITHUB_SHA).svg?h=250 --output .commiticons/$(echo $GITHUB_SHA).svg
+    
+    # Push changes
+    - name: Push Changes
+      run: |
+        git config user.name Amorpheuz
+        git config user.email connect@amorpheuz.dev
+        git add .commiticons/
+        git commit -m "Generated Commiticon for: $GITHUB_SHA"
+        git push
+```
+
+### Additional Resources / Info
+
+Here are all the projects that make this workflow possible, A huge shout out to all of them:
+
+1. [Dicebear Avatars](https://github.com/DiceBear/avatars) for the lovely avatars. 🖼
+2. [Icanhazdadjoke](https://icanhazdadjoke.com/) for the jokes! 🤣
+3. [actions/checkout](https://github.com/actions/checkout) for making repo interactions a breeze. 🏄🏽‍♂️
+4. The `sed`, `cURL` and `tr` commands. 👨🏽‍💻
+5. [GitHub Docs](https://docs.github.com/en) for all the knowledge! 🧠
+
+<hr/>
+
+With Commiticons, I aimed to improve my grasp over not only Actions but also shell commands. Commiticons can be used for a variety of useful things too, like identifying releases with their unique avatars, jailing an avatar for mischief (if it introduced a bug) or even celebrating its birthday every year with a cake! The possibilities are endless. 🤯
+
+_I hope you found this concept fun and look forward to seeing how you take it ahead! If you are confused about something, have some ideas, or just want to chat; reach out to me via my Twitter [@Amorpheuz](https://twitter.com/amorpheuz) or [DEV](https://dev.to/amorpheuz)!_
