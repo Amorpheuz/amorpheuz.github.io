@@ -6,10 +6,10 @@
 
 [[headers]]
   for = "/documents/YashDave.pdf"
-  [header.values]
+  [headers.values]
     Link = "https://amorpheuz.dev/documents/YashDave.pdf; rel=canonical"
 
 [[headers]]
   for = "/documents/YashDave.txt"
-  [header.values]
+  [headers.values]
     Link = "https://amorpheuz.dev/documents/YashDave.txt; rel=canonical"
