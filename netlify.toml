@@ -7,9 +7,9 @@
 [[headers]]
   for = "/documents/YashDave.pdf"
   [headers.values]
-    Link = "https://amorpheuz.dev/documents/YashDave.pdf; rel=\"canonical\""
+    Link = "<https://amorpheuz.dev/documents/YashDave.pdf>; rel=\"canonical\""
 
 [[headers]]
   for = "/documents/YashDave.txt"
   [headers.values]
-    Link = "https://amorpheuz.dev/documents/YashDave.txt; rel=\"canonical\""
+    Link = "<https://amorpheuz.dev/documents/YashDave.txt>; rel=\"canonical\""
