@@ -3,3 +3,13 @@
   to = "https://gist.github.com/Amorpheuz/ba2f1d26b7272d569800dd2c7c53df74"
   status = 200
   force = true
+
+[[headers]]
+  for = "/documents/YashDave.pdf"
+  [header.values]
+    Link = "https://amorpheuz.dev/documents/YashDave.pdf; rel=canonical"
+
+[[headers]]
+  for = "/documents/YashDave.txt"
+  [header.values]
+    Link = "https://amorpheuz.dev/documents/YashDave.txt; rel=canonical"
