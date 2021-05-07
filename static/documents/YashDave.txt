@@ -13,19 +13,25 @@ Github: https://github.com/amorpheuz
 Portfolio: https://amorpheuz.dev/
 
 
-Frontend developer with experience in building webapps based on React.js and Pure HTML + CSS + JavaScript. Successfully completed 10 unique projects, each one having its own set of accomplished challenges. Love to experiment with modern technologies, promote Open Source and an Occasional Blogger. Looking forward to starting my journey as a frontend developer at a company which will not only challenge me but help me develop my skillset further.
+Frontend developer with experience in building webapps based on
+Vue, React.js and Pure HTML + CSS + JavaScript. Currently
+working as a Full-Stack Dev with Nuxt + Node at Bitpod. Love to
+experiment with modern technologies, promote Open Source
+and an Occasional Blogger. Looking forward to starting my
+journey as a frontend developer at a company which will not
+only challenge me but help me develop my skillset further.
 
 =============================================
 SKILLS
 =============================================
 * Frontend Developer
-- React.js, Gatsby, JavaScript, HTML5 + CSS3, Bootstrap.
+- Vue, Nuxt, Tailwind, Gatsby, React.js, JavaScript, HTML5 + CSS3, Bootstrap.
 
 * Backend Developer
-- C#, .NET Core, Python, PostgreSQL, MS-SQL, MongoDB, Firebase.
+- Vue, Nuxt, Tailwind, Gatsby, React.js, JavaScript, HTML5 + CSS3, Bootstrap.
 
 * Misc
-- Git, VS Code, Adobe Illustrator, Adobe XD.
+- Git, GitHub, GitHub Actions, VS Code, Adobe XD, Adobe Illustrator.
 
 * Operating System
 - Linux, Windows, and WSL.
@@ -33,6 +39,15 @@ SKILLS
 =============================================
 EXPERIENCE
 =============================================
+2020/11 – present 
+Trainee Engineer - FullStack, Bitpod - Vadodara, India
+- Work on developing a Low Code platform used to power Event app by Bitpod.
+- Core stack uses Nuxt, Node, MongoDB, and a bit of React.
+- Developed 5 new core features for the platform which help user onboarding, secure payments, mobile responsiveness, and export data.
+- Responsible for managing Git repository as well as overlook frontend deployments.
+- Part of work done available at my work GitHub: https://github.com/yash-bitpod
+
+
 2019/01 - 2019/05
 Software Intern / NINtec Business Consulting LLP, Ahmedabad, Gujarat
 - Wrote code on .NET Core platform using Visual Studio, Entity Framework and MS-SQL.
@@ -45,7 +60,7 @@ EDUCATION
 =============================================
 * Master of Science - Computer Applications / Symbiosis Institute of Computer Studies and Research, Pune
 - JUNE 2019 - CURRENT
-- In my final year for the Degree. Pursuing a specialization in the Data Science field. Current CGPA: 9.03/10 (UGC 10-point system).
+- In my final year for the Degree. Pursuing a specialization in the Data Science field. Current CGPA: 9.04/10 (UGC 10-point system).
 
 * Bachelor of Computer Applications / Navrachana University, Vadodara
 - JUNE 2016 - MAY 2019

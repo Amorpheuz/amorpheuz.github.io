@@ -2,7 +2,7 @@
   "name": "amorpheuz-portfolio",
   "private": true,
   "description": "A blog and portfolio site for Yash Dave",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Yash Dave <connect@amorpheuz.dev>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
