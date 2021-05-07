@@ -2,7 +2,7 @@
   "name": "amorpheuz-portfolio",
   "private": true,
   "description": "A blog and portfolio site for Yash Dave",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Yash Dave <connect@amorpheuz.dev>",
   "dependencies": {
     "@mdx-js/mdx": "^1.5.7",
@@ -24,7 +24,7 @@
   "license": "MIT",
   "scripts": {
     "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
-    "develop": "gatsby develop",
+    "develop": "gatsby clean && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
