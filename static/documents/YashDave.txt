@@ -1,110 +1,60 @@
-Yash Dave
+Yash Dave 
+Bengaluru, KA
+connect@amorpheuz.dev
 
-Located in: Vadodara, Gujarat, India.
+Summary
 
-Email: connect@amorpheuz.dev
+Experienced full-stack developer, with a focus on frontend, having 4 years of experience building developer tools in various tech stacks based on React, Vue.js, Solid.js, TypeScript and vanilla JavaScript. Building automations for things is my pastime. I nerd out about mechanical keyboards and latest in tech. You can find me on GitHub, LinkedIn, X, dev.to, and my blog!
 
-LinkedIn: https://linkedin.com/in/amorpheuz
+Socials
 
-Twitter: https://twitter.com/amorpheuz
+- https://amorpheuz.dev/
+- https://twitter.com/amorpheuz
+- https://www.linkedin.com/in/amorpheuz/
+- https://github.com/amorpheuz
+- https://dev.to/amorpheuz
 
-Github: https://github.com/amorpheuz
+Experience
 
-Portfolio: https://amorpheuz.dev/
+Software Engineer 3 
+DeepSource (YC 20)                   07/2021 - Present
+Bengaluru , KA
 
+- Built the SSO + SAML, SCIM integration, and Enterprise Control Panel for users of On-premise version to manage users, teams and data on an instance wide level.
+- Created the UI for Metrics,  Support,  DeepSource Directory.
+- Built CI/CD jobs for development and production environments with help of GitHub Actions and GCP Cloud Build for multiple apps.
+- Developed Zeal, DeepSource's Design system, that helps with components, icons and utilities for the main dashboard app.
+- Added billing integrations, via Stripe, GitHub, and Self-managed, for the main dashboard app.
+- Built analytics integrations, via Rudder, Google Tag Manager and PostHog for multiple websites and apps.
+- Improved performance of the main dashboard app by optimizing network calls, and caching, reducing bundle size, and optimizing static assets.
+- Setup tests for Vue components and VueX store, along with improving Sentry integration with the app to detect errors faster.
+- Spearheaded migration planning and execution of migrating full frontend stack in Nuxt 2 + Vue 2 to Astro and Nuxt 3 + Vue 3.
+- Actively working on developing a VS Code extension for our platform that brings static analysis capabilities to users on their machines.
+- Built multiple static websites for marketing along with managing their deployment, improving their SEO and web vitals performance.
+- Tech: Vue, Nuxt, Tailwind, Solid.js, JavaScript, HTML, CSS, SASS, PostCSS, Webpack, GraphQL, Python, Django, Postgres, Docker, GitHub Actions, GCP.
 
-Frontend developer with experience in building webapps based on
-Vue, React.js and Pure HTML + CSS + JavaScript. Currently
-working as a Full-Stack Dev with Nuxt + Node at Bitpod. Love to
-experiment with modern technologies, promote Open Source
-and an Occasional Blogger. Looking forward to starting my
-journey as a frontend developer at a company which will not
-only challenge me but help me develop my skillset further.
+Trainee Engineer
+Bitpod                   11/2020 - 06/2021
+Pune , MH
 
-=============================================
-SKILLS
-=============================================
-* Frontend Developer
-- Vue, Nuxt, Tailwind, Gatsby, React.js, JavaScript, HTML5 + CSS3, Bootstrap.
+- Developed a Low Code platform used to power Event app by Bitpod.
+- Built 5 new core features for the platform which help user onboarding, secure payments, mobile responsiveness, and new functionality.
+- Tech: Vue, Nuxt, Google Cloud Functions.
 
-* Backend Developer
-- Vue, Nuxt, Tailwind, Gatsby, React.js, JavaScript, HTML5 + CSS3, Bootstrap.
+Education
 
-* Misc
-- Git, GitHub, GitHub Actions, VS Code, Adobe XD, Adobe Illustrator.
+Symbiosis Institute of Computer Studies and Research                   Master of Sciences (Computer Applications) 
+04/2021
+Pune , MH
+- Graduated with 9.15/10 CGPA.
 
-* Operating System
-- Linux, Windows, and WSL.
+Navarachana University                   Bachelor of Computer Applications 
+05/2019
+Vadodara , GJ
+- Graduated with 9.5/10 CGPA.
 
-=============================================
-EXPERIENCE
-=============================================
-2020/11 – present 
-Trainee Engineer - FullStack, Bitpod - Vadodara, India
-- Work on developing a Low Code platform used to power Event app by Bitpod.
-- Core stack uses Nuxt, Node, MongoDB, and a bit of React.
-- Developed 5 new core features for the platform which help user onboarding, secure payments, mobile responsiveness, and export data.
-- Responsible for managing Git repository as well as overlook frontend deployments.
-- Part of work done available at my work GitHub: https://github.com/yash-bitpod
+Projects
 
-
-2019/01 - 2019/05
-Software Intern / NINtec Business Consulting LLP, Ahmedabad, Gujarat
-- Wrote code on .NET Core platform using Visual Studio, Entity Framework and MS-SQL.
-- Built databases and table structures following ORM methodology for web applications.
-- Evaluated project requirements & specifications and developed software application that surpassed mentor's expectations.
-- https://github.com/Amorpheuz/GadgetCMS
-
-=============================================
-EDUCATION
-=============================================
-* Master of Science - Computer Applications / Symbiosis Institute of Computer Studies and Research, Pune
-- JUNE 2019 - CURRENT
-- In my final year for the Degree. Pursuing a specialization in the Data Science field. Current CGPA: 9.04/10 (UGC 10-point system).
-
-* Bachelor of Computer Applications / Navrachana University, Vadodara
-- JUNE 2016 - MAY 2019
-- Graduated with a CGPA of 9.5 / 10 (UGC 10-point system).
-
-=============================================
-PROJECTS
-=============================================
-* sillhacks.online: https://sillyhacks.online/
-- Website for Silly Hacks, a part of MLH 2020 Hackathon season.
-- Technology Stack: Gatsby, React.js, Tailwind CSS
-
-* Commiticons: https://github.com/Amorpheuz/Commiticons
-- A GitHub Actions based project that generates a Unique avatar for every commit.
-- Technology Stack: GitHub Actions, GitHub API, Bash Commands
-
-* amorpheuz.dev: https://github.com/Amorpheuz/amorpheuz.github.io
-- My personal portfolio + blog website.
-- Technology Stack: Gatsby, React.js, Theme UI, MDX
-
-* The Onion Rooting: https://devfolio.co/submissions/the-onion-rooting
-- A DApp which makes used of Ethereum smart contracts which aims to solve the problem of crop/produce hoarding by intermediaries.
-- Technology Stack: React.js, Solidity, web3.js and Bootstrap
-
-=============================================
-OPEN SOURCE CONTRIBUTIONS
-=============================================
-* Forem: Frontend Bug fixes and Issues.
-* Mozilla Gujarat: Issues, Pull Request Reviews and Mentor Contributors.
-* Mozilla India: Bug Fixes.
-
-=============================================
-ACTIVITIES AND ACCOMPLISHMENTS
-=============================================
-
-* Current Vice-Chair of SICSR ACM Student Chapter.
-* Enthusiastic Mozillian and actively participating with Mozilla Gujarat, Mozilla Pune, and Mozilla India.
-* Moderator and avid member of Facebook Developer Circle: Pune.
-* Recipient of Developer Circle Training Courses Scholarship (Track 1) for Web Development courses under OpenClassrooms which included: Build web apps with ReactJS, Learn Programming with JavaScript and Create Web Page Layouts with CSS.
-* Delivered talks about Front-end concepts, React.js and Best Programming practices on multiple occasions.
-* Successfully organized 4th National ACM-W Hackathon as part of the Technical Team overseeing hackers compete from all-over India.
-* Runner-up Symtaxify Hackathon, 2019.
-* Vice-Chair and Publisher of Computers@NUV from June 2017 - October 2018.
-* Successfully organized TechNUVate, college Techfest, for 2017 & 2018 as part of the Core Organizing Team with each seeing 200+ attendees.
-* Recipient of M.V.P. Local Hack Day - Vadodara, 2018. 
-
-
+- sillyhacks.online: Website for Silly Hacks, a part of MLH 2020 Hackathon season with React, Gatsby, and Tailwind.
+- Commiticons: GitHub Actions based project that generates a Unique avatar for every commit.
+- The Onion rooting: A DApp which aims to solve the problem of crop/produce hoarding by intermediaries.
